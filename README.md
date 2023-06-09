@@ -1,1 +1,1 @@
-# Rat-in-a-Maze
+# Maze Generator
