@@ -1,4 +1,5 @@
 import random
+from displayMaze import displayMaze
 
 def getNeighbours(n,parent,r,c):
     li = []
@@ -16,8 +17,9 @@ def generateMaze(r,c):
     parent = makeSet(r,c)
     edge = []
     
-    while (find(parent,0) != find(parent,(r*c)-1)):
-        rand1 = random.choice(parent)
+    while (find(parent,0) != find(parent,(r*c)-1) or len(edge) < (r*c)-1 ):
+    
+        rand1 = random.randint(0,r*c-1)
         neighbours = getNeighbours(rand1,parent,r,c)
         if neighbours==[]:
             continue
@@ -48,3 +50,19 @@ def union(parent,n1,n2):
     return parent
 
 
+r = int(input("Enter number of rows in the maze: "))
+c = int(input("Enter number of columns in the maze: "))
+edgeList = generateMaze(r,c)
+print("Edge list of the generated maze is: ")
+print(edgeList)
+
+
+f = open("Generated_maze.txt","w")
+f.write(str(edgeList))
+f.write("\n")
+f.write(str(r))
+f.write("\n")
+f.write(str(c))
+f.close()
+
+displayMaze(edgeList,r,c)
