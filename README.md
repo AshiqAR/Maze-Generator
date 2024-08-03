@@ -34,3 +34,8 @@ Ensure you have the following dependencies installed:
 
 - Python 3.x
 - `turtle` module (included with Python's standard library)
+
+## Sample Generated Maze and its Solution
+
+<img src="output/generatedMaze.png" alt="generated maze image" width="400"/>
+<img src="output/output.png" alt="solved maze"/>
