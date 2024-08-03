@@ -1,5 +1,3 @@
-from displaySolution import displaySolution
-
 def getAdjacent(edgeList,src):
     li = []
     for ele in edgeList:
@@ -40,8 +38,10 @@ def readMaze():
 
 
 edgeList,r,c = readMaze()
+print("Number of rows in the maze is: ",r)
+print("Number of columns in the maze is: ",c)
 print("Edge list of the maze is: ")
-print(edgeList,r,c)
+print(edgeList)
 path = []
 visited = []
 src = 0
@@ -50,4 +50,3 @@ reachable,path = isReachable(edgeList,path,src,dest,visited)
 path.remove({0})
 print("\nPath obtained from start to the last cell is:")
 print(path)
-displaySolution(path,edgeList,r,c)
