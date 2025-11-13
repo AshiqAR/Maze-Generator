@@ -1,5 +1,5 @@
 import turtle
-
+print("Displaying Maze... Close the window to continue.")
 def displayMaze(edgeList, r, c):
     win_width, win_height, bg_color = 2000, 2000, 'white'
 
